@@ -1,0 +1,14 @@
+<ion-header>
+  <custom-header [title]="'Agenda'"></custom-header>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list no-lines>
+    <button ion-item *ngFor="let evento of eventos |async" (click)="onEventos(evento)">
+      {{ evento.ag_evento }}
+      <p>{{ evento.ag_calendario | date:'fullDate' | uppercase }}</p>
+      <p>Horário: {{ evento.ag_horario }} hs</p>
+    </button>
+  </ion-list>
+</ion-content>

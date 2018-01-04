@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Evento</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item text-center>
+    <h1>{{ evento_pass.ag_evento }}</h1>
+  </ion-item>
+  <ion-item no-lines>
+    <br>
+    <h2>Data: {{ evento_pass.ag_calendario | date: 'longDate' | uppercase}}</h2>
+    <br>
+    <h2>Dia: {{ evento_pass.ag_calendario | date: 'EEEE' | uppercase}}</h2>
+    <br>
+    <h2>Horário: {{ evento_pass.ag_horario }}</h2>
+    <br>
+    <h2>Local: {{ evento_pass.ag_local }}</h2>
+    <br>
+    <h2>Tipo do evento: {{ evento_pass.ag_tipo }}</h2>
+    <br>
+    <h2>Preceito: {{ evento_pass.ag_preceito }}</h2>
+    <br>
+    <h2>Observações: {{ evento_pass.ag_observacao }}</h2>
+
+  </ion-item>
+
+</ion-content>

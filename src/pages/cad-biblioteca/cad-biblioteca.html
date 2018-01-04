@@ -1,0 +1,60 @@
+<ion-header>
+  <custom-header [title]="' Cadastro Biblioteca'"></custom-header>
+</ion-header>
+
+<ion-content padding>
+  <h1 text-center>
+    <ion-icon class="icon_prinicpal" name="book" color="primary"></ion-icon>
+  </h1>
+
+  <!-- Início do formulário -->
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+    <ion-item>
+      <ion-icon name="book" item-left></ion-icon>
+      <ion-input formControlName="bibli_nome" type="text" placeholder="Nome do Livro"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="person" item-left></ion-icon>
+      <ion-input formControlName="bibli_author" type="text" placeholder="Nome do Author"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="bookmarks" item-left></ion-icon>
+      <ion-input formControlName="bibli_editora" type="text" placeholder="Nome da Editora"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="options" item-left></ion-icon>
+      <ion-label>Catálogo</ion-label>
+      <ion-select formControlName="bibli_catalogo" multiple="true" okText="Sim" cancelText="Não">
+        <ion-option value="01">Espírita</ion-option>
+        <ion-option value="02">Espirutualista</ion-option>
+        <ion-option value="03">Religiões de origem Africana</ion-option>
+        <ion-option value="04">Espirutualista</ion-option>
+        <ion-option value="05">Espirutualista</ion-option>
+        <ion-option value="06">Espirutualista</ion-option>
+        <ion-option value="07">Espirutualista</ion-option>
+        <ion-option value="08">Espirutualista</ion-option>
+        <ion-option value="09">Espirutualista</ion-option>
+        <ion-option value="10">Espirutualista</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="add" item-left></ion-icon>
+      <ion-input formControlName="bibli_numero" type="number" placeholder="Numero do Livro"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="browsers" item-left></ion-icon>
+      <ion-label>Tipo</ion-label>
+      <ion-select formControlName="bibli_restricao" okText="Sim" cancelText="Não">
+        <ion-option value="SIM">Com Restrição</ion-option>
+        <ion-option value="NÃO">Sem Restrição</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="information" item-left></ion-icon>
+      <ion-textarea formControlName="bibli_observacao" placeholder="Observação"></ion-textarea>
+    </ion-item>
+    <br>
+    <button ion-button full type="submit" [disabled]="signupForm.invalid">Criar Livro</button>
+  </form>
+
+</ion-content>

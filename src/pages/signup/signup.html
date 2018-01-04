@@ -1,0 +1,65 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1 text-center>
+    <ion-icon class="icon_prinicpal" name="contact" color="primary"></ion-icon>
+  </h1>
+
+  <!-- Início do formulário -->
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+    <ion-item>
+      <ion-icon name="person" item-left></ion-icon>
+      <ion-input formControlName="name" type="text" placeholder="Nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="at" item-left></ion-icon>
+      <ion-input formControlName="username" type="text" placeholder="Usuário"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="mail" item-left></ion-icon>
+      <ion-input formControlName="email" type="email" placeholder="E-mail"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-icon name="call" item-left></ion-icon>
+        <ion-input formControlName="phone01" type="text" placeholder="Celular (99)999999999"></ion-input>
+      </ion-item>
+    <ion-item>
+        <ion-icon name="calendar" item-left></ion-icon>
+        <ion-input formControlName="birthday" type="date" placeholder="Aniversário"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-icon name="lock" item-left></ion-icon>
+      <ion-input formControlName="password" type="password" placeholder="Senha"></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-icon name="lock" item-left></ion-icon>
+      <ion-input formControlName="password" type="password" placeholder="Senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock" item-left></ion-icon>
+      <ion-input formControlName="password" type="password" placeholder="Senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock" item-left></ion-icon>
+      <ion-input formControlName="password" type="password" placeholder="Senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock" item-left></ion-icon>
+      <ion-input formControlName="password" type="password" placeholder="Senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock" item-left></ion-icon>
+      <ion-input formControlName="password" type="password" placeholder="Senha"></ion-input>
+    </ion-item> -->
+    <br>
+    <button ion-button full type="submit" [disabled]="signupForm.invalid">Criar Conta</button>
+  </form>
+
+</ion-content>

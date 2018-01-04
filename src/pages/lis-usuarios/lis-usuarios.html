@@ -1,0 +1,16 @@
+<ion-header>
+  <custom-header [title]="'Lista de Usuários'"></custom-header>
+</ion-header>
+
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item ion-item *ngFor="let user of users | async ">
+      <ion-avatar item-left>
+        <img [src]="user.photo || 'assets/imgs/no-photo.jpg'" >
+      </ion-avatar>
+      <h2>{{ user.name | capitalize: true  }}</h2>
+      <p>{{ user.email }}</p>
+      <p>{{ user.phone01 }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

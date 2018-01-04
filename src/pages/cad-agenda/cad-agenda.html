@@ -1,0 +1,58 @@
+<ion-header>
+  <custom-header [title]="' Cadastro Agenda'"></custom-header>
+</ion-header>
+
+<ion-content padding>
+  <h1 text-center>
+    <ion-icon class="icon_prinicpal" name="clock" color="primary"></ion-icon>
+  </h1>
+
+  <!-- Início do formulário -->
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+    <ion-item>
+      <ion-icon name="calendar" item-left></ion-icon>
+      <ion-input formControlName="ag_calendario" type="date" placeholder="Data"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="people" item-left></ion-icon>
+      <ion-input formControlName="ag_evento" type="text" placeholder="Evento"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="alarm" item-left></ion-icon>
+      <ion-input formControlName="ag_horario" type="time" placeholder="Horário"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="navigate" item-left></ion-icon>
+      <ion-input formControlName="ag_local" type="email" placeholder="Local"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="bowtie" item-left></ion-icon>
+      <ion-label>Tipo</ion-label>
+      <ion-select formControlName="ag_tipo" okText="Sim" cancelText="Não">
+        <ion-option value="Umbanda">Umbanda</ion-option>
+        <ion-option value="Quimbanda">Quimbanda</ion-option>
+        <ion-option value="Evento">Evento</ion-option>
+        <ion-option value="Festa">Festa</ion-option>
+        <ion-option value="Deitada">Deitada</ion-option>
+        <ion-option value="Levantada">Levantada</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="cut" item-left></ion-icon>
+      <ion-label>Preceito</ion-label>
+      <ion-select formControlName="ag_preceito" okText="Sim" cancelText="Não">
+        <ion-option value="Não">Não</ion-option>
+        <ion-option value="12 Horas">12 Horas</ion-option>
+        <ion-option value="24 Horas">24 Horas</ion-option>
+        <ion-option value="7 Dias">7 Dias</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="alert" item-left></ion-icon>
+      <ion-textarea formControlName="ag_observacao" placeholder="Observação"></ion-textarea>
+    </ion-item>
+    <br>
+    <button ion-button full type="submit" [disabled]="signupForm.invalid">Criar Evento</button>
+  </form>
+
+</ion-content>

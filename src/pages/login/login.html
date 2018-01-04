@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cadastro de Médiuns</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1 text-center>
+    <ion-img src="../../assets/imgs/Centro.png"></ion-img>
+  </h1>
+
+  <!-- Início do formulário -->
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+    <ion-item>
+      <ion-icon name="mail" item-left></ion-icon>
+      <ion-input formControlName="email" type="email" placeholder="E-mail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock" item-left></ion-icon>
+      <ion-input formControlName="password" type="password" placeholder="Senha"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button full type="submit" [disabled]="loginForm.invalid">Logar</button>
+  </form>
+  <button ion-button full clear text-center (click)="onSignup()">Cadastrar</button>
+  <button ion-button full clear text-center (click)="onHome()">principal</button>
+
+</ion-content>

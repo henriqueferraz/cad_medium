@@ -1,0 +1,13 @@
+{
+  "name": "Cadastro de Médiuns",
+  "short_name": "cad_mediuns",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/imgs/logo_ofnet.png",
+    "sizes": "250x250",
+    "type": "image/png"
+  }],
+  "background_color": "#4e8ef7",
+  "theme_color": "#4e8ef7"
+}
